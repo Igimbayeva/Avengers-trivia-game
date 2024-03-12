@@ -55,12 +55,12 @@ footer h3 {
 }
 
 .header-center {
-    font-size: 2em;
+    font-size: 1.5em;
     display: flex;
     align-items: center;
     justify-content: center;
     background-color: rgb(25, 25, 25); /* Header background color */
-    padding: 20px;
+    padding: 0;
 }
 
 .content {
@@ -68,9 +68,9 @@ footer h3 {
 }
 
 .announcement {
-    font-size: 1.3em;
+    font-size: 1.25em;
     text-align: center;
-    padding-bottom: 15px;
+    padding-bottom: 10px;
     color: rgb(247, 250, 253); /* Updated color */
 }
 
@@ -83,7 +83,7 @@ footer h3 {
 
 .cta-button {
     position: absolute;
-    top: 30%;
+    top: 40%;
     left: 50%;
     transform: translate(-50%, -50%);
     padding: 10px 20px;
@@ -109,7 +109,7 @@ footer h3 {
     }
 
     .cta-button {
-        font-size: 0.9em;
+        font-size: 1em;
         padding: 1.5% 3%;
         top: 30%; /* Adjust the top position as needed */
     }
@@ -149,7 +149,7 @@ footer h3 {
 /* Video Styles */
 
 .header-center-video {
-    font-size: 1.05rem;
+    font-size: 1rem;
     display:block;
     align-items: center;
     justify-content: center;
@@ -176,8 +176,8 @@ footer h3 {
 
 #player {
     margin-top: 0px;
-    width: 1760px; 
-    height: 990px; 
+    width: 1280px; 
+    height: 720px; 
 }
 
 /* Media Queries for Responsive Design in video.html */
