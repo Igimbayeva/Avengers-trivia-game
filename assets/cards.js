@@ -6,10 +6,10 @@ var hashVal = "02e6893f2e967cff388b27e4a61d3938";
 var heroNameEl = document.getElementById('hero-name');
 var heroImageEl = document.getElementById('hero-image');
 var heroDescriptionEl = document.getElementById('hero-description');
-var currentQuestionIndex = 0;
+var currentQuestionj = 0;
 var questionsEl = document.getElementById('questions');
 var heroQuestionEl = document.getElementById('hero-question');
-var choicesEl = document.getElementById('choices');
+
 var score = 0;
 
 var avengerCharacters = [
@@ -23,7 +23,7 @@ var avengerCharacters = [
         choices: [
             "The War of 1812",
             "World War 2",
-            "The Korean War",
+            "World War Z",
             "The War on Drugs"
         ],
         answer: "World War 2"
@@ -206,9 +206,9 @@ var avengerCharacters = [
             "Taron Egerton",
             "Penn Badgley",
             "Sam Claflin",
-            "Sebastian Stan, Rutgers class of 2005"
+            "Sebastian Stan"
         ],
-        answer: "Sebastian Stan, Rutgers class of 2005"
+        answer: "Sebastian Stan"
     },
     {
         name: "Black Panther",
@@ -254,26 +254,34 @@ if (sampleHero) {
 */
 }
 
-
-for (i=0; i < avengerCharacters.length; i++){
-        var displayImage = avengerCharacters[i].image;
-        var heroImageEl = document.getElementById('hero-image' + i);
-        heroImageEl.textContent = displayImage;
-        var displayQuestion = avengerCharacters[i].question;
+function displayQuestions() {
+    
+    for (i=0; i < avengerCharacters.length; i++){
+        const currentCharacter = avengerCharacters[i];
+        console.log(currentCharacter);
+        //var displayImage = avengerCharacters[i].image;
+        //var heroImageEl = document.getElementById('hero-image' + i);
+        //heroImageEl.textContent = displayImage;
+        var displayQuestion = currentCharacter.question;
         var heroQuestionEl = document.getElementById('hero-question' + i);
         heroQuestionEl.textContent = displayQuestion;
         //console.log(key + ": " + avenger[key]);
-        fetchCharacter(avengerCharacters[i].name, i);
-        for (j = 0; j < avengerCharacters[i].choices.length; j++) {
-
+        fetchCharacter(currentCharacter.name, i);
+        for (j = 0; j < currentCharacter.choices.length; j++) {
+            const characterChoice = currentCharacter.choices[j];
+            console.log(characterChoice);
             var choiceNode = document.createElement('button');
             choiceNode.setAttribute('class', 'choice');
-            choiceNode.setAttribute('value', avengerCharacters[i].choices[j]);
-            choiceNode.textContent = avengerCharacters[i].choices[j];
+            choiceNode.setAttribute('value', currentCharacter.choices[j]);
+            choiceNode.textContent = currentCharacter.choices[j];
+            //choiceNode.onclick = checkAnswer;
             document.getElementById('choices' + i).appendChild(choiceNode);
+            //console.log(choiceNode);
+            choiceNode.addEventListener("click", checkAnswer);
         }
-}https://stackoverflow.com/questions/63541883/making-a-matrix-of-inputs-from-user-defined-inputs
-
+    }
+    
+}
 function fetchCharacter(character, i){
     var name  = character;
     var apiURL = `https://gateway.marvel.com:443/v1/public/characters?name=${ name }&ts=1&apikey=3a0831b3a338e3e8018a4bb3175efe3a&hash=02e6893f2e967cff388b27e4a61d3938`;
@@ -292,11 +300,44 @@ function fetchCharacter(character, i){
         })
 }
 
-function checkAnswer(event){
-    var buttonEl = event.target;
-    if (!buttonEl.matches('.')){
-        return;
-    } else if (displayQuestion = avengerCharacters[i].answer){
-        score + avengerCharacters[i].value;
+function checkAnswer(evt){
+    evt.preventDefault();
+    console.log(evt.currentTarget);
+    
+    var choicesEl = document.querySelectorAll('.choices');
+    const choiceButtons = document.querySelectorAll('.choice');
+    //console.log(choicesEl);
+    //console.log(choicesEl.id);
+    //const userAnswer = document.querySelector()
+    for (let j = 0; j < choicesEl.length; j++) {
+        const userChoice = evt.currentTarget[j];
+        console.log(userChoice);
+        const questionBlock = choicesEl[j];
+        console.log(questionBlock);
+        const correctAnswer = currentCharacter.answer[j];
+    
+    if (currentCharacter &&  correctAnswer === userChoice){
+        score++;
+        alert("Correct, Mr. Fury");
+    } else {
+        alert("Mr. Fury, I expected better");
     }
 }
+}
+
+function endGame(){
+    if (score > 7) {
+        alert("You win, Director Fury.");
+        return score;
+    } else {
+        alert("You lose. Loki wins.")
+    }
+}
+
+
+
+document.addEventListener("DOMContentLoaded", (evt) =>{
+    console.log(evt);
+    displayQuestions();
+});
+
