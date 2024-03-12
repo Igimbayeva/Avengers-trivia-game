@@ -41,3 +41,11 @@ function onPlayerStateChange(event) {
 function stopVideo() {
     player.stopVideo();
 }
+
+// Function to hide the current page
+function hideCurrentPage() {
+    document.body.style.display = 'none';
+}
+
+// Function to show the new page
+function showNewPage() {} // ENTER THE PAGE THAT WILL LOAD AFTER THIS WINDOW CLOSES
