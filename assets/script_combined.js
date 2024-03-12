@@ -19,7 +19,7 @@ function onYouTubeIframeAPIReady() {
         playerVars: {
             'playsinline': 1,
             'autoplay': 1,
-            'mute': 1  // Autoplay and mute the video
+            'mute': 1  // Autoplay and mute the video without having to press play button 
         },
         events: {
             'onReady': onPlayerReady,
@@ -30,14 +30,17 @@ function onYouTubeIframeAPIReady() {
 
 // Function called when the player is ready
 function onPlayerReady(event) {
-    // No need to seek to a specific time, as autoplay will start from the beginning
+    // Seek to the desired time (22 seconds)
+    player.seekTo(22);
+    // Start playing the video
+    player.playVideo();
 }
 
 // Function called when the player's state changes
 var done = false;
 function onPlayerStateChange(event) {
     if (event.data == YT.PlayerState.PLAYING && !done) {
-        setTimeout(stopVideo, 40500); // Stop the video after 40.5 seconds
+        setTimeout(stopVideo, 28000); // Stop the video after 28 seconds
         done = true;
     }
 }
