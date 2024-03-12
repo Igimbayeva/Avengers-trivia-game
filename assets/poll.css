@@ -1,0 +1,74 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: #222;
+
+}
+.container{
+    position: relative;
+    width: 600px;
+    height: 600px;
+    border: 2px solid #fff;
+    border-radius: 50%;
+
+}
+
+.container .pfp{
+    position: relative;
+    left: -50%;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+
+
+}
+
+.container .pfp .imgbox{
+    position: absolute;
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    overflow: hidden;
+    transition: 1s;
+    border: 1px solid #fff;
+    transform: rotate(calc(360deg/8 * var(--i)));
+    transform-origin: 340px;
+    z-index: 5;
+    
+}
+
+.imgbox img {
+    width: 50%;
+    height: 50%;
+}
+
+.container .pfp .imgbox img{
+    position: absolute;
+    top: 0;
+    left: 0%;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transform:rotate(calc(-360deg/8 * var(--i)));
+    transform: 1s;
+}
+
+.container .pfp .imgbox.active img{
+    border: 4px solid transparent;
+    border-left: 4px solid red;
+    border-right: 4px solid blue;
+    border-radius: 50%;
+    animation: cir 5s linear;
+
+}
