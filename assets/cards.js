@@ -267,7 +267,9 @@ function displayQuestions() {
             //choiceNode.onclick = checkAnswer;
             document.getElementById('choices' + i).appendChild(choiceNode);
             //console.log(choiceNode);
-            choiceNode.addEventListener("click", checkAnswer);
+            choiceNode.addEventListener("click", function(evt){
+                checkAnswer(evt, currentCharacter);
+            });
         }
     }
     
@@ -290,21 +292,21 @@ function fetchCharacter(character, i){
         })
 }
 
-function checkAnswer(evt){
+function checkAnswer(evt, currentCharacter){
     evt.preventDefault();
-    console.log(evt.currentTarget);
+    console.log(evt.target);
     
     var choicesEl = document.querySelectorAll('.choices');
     const choiceButtons = document.querySelectorAll('.choice');
     //console.log(choicesEl);
     //console.log(choicesEl.id);
     //const userAnswer = document.querySelector()
-    for (let j = 0; j < choicesEl.length; j++) {
-        const userChoice = evt.currentTarget[j];
+    //for (let j = 0; j < choicesEl.length; j++) {
+        const userChoice = evt.target.textContent;
         console.log(userChoice);
         const questionBlock = choicesEl[j];
         console.log(questionBlock);
-        const correctAnswer = currentCharacter.answer[j];
+        const correctAnswer = currentCharacter.answer;
     
     if (currentCharacter &&  correctAnswer === userChoice){
         score++;
@@ -312,7 +314,7 @@ function checkAnswer(evt){
     } else {
         alert("Mr. Fury, I expected better");
     }
-}
+//}
 }
 
 function endGame(){
