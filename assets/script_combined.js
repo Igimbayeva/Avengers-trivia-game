@@ -18,8 +18,7 @@ function onYouTubeIframeAPIReady() {
         videoId: 'pQKYN-yR2oM',
         playerVars: {
             'playsinline': 1,
-            'autoplay': 1,
-            'mute': 1  // Autoplay and mute the video without having to press play button 
+            'autoplay': 1
         },
         events: {
             'onReady': onPlayerReady,
