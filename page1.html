@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="assets/style_combined.css" />
+    <title>Document</title>
+</head>
+<body>
+    <header class="dark-gray-header">
+        <div class="header-center">
+            <h1>Attention, Nick Fury!</h1>
+        </div>
+    </header>
+
+    <section class="announcement">
+        <h2>Earth has been invaded by a malevolent force and needs a team of Avengers to fight for the freedom and survival of every citizen on the planet!</h2>
+    </section>
+
+    <main>
+        <section class="hero"></section>
+
+        <div class="overlay">
+            <button class="cta-button" onclick="assembleTeam()">Assemble the Team</button>
+        </div>
+
+        <footer class="footer-center">
+            <h3>S.H.I.E.L.D HEADQUARTERS</h3>
+            <p>&copy; 219 West 47th Street, New York City, New York.</p>
+        </footer>
+    </main>
+    <script src="assets/script_combined.js"></script>
+
+    <!-- Adding the script to handle redirection to video.html -->
+    <script>
+        function assembleTeam() {
+            window.location.href = 'video.html';
+        }
+    </script>
+</body>
+</html>

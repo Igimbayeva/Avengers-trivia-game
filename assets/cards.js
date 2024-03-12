@@ -292,9 +292,11 @@ function fetchCharacter(character, i){
         })
 }
 
+
 function checkAnswer(evt, currentCharacter){
     evt.preventDefault();
     console.log(evt.target);
+
     
     var choicesEl = document.querySelectorAll('.choices');
     const choiceButtons = document.querySelectorAll('.choice');
@@ -331,4 +333,4 @@ function endGame(){
 document.addEventListener("DOMContentLoaded", (evt) =>{
     console.log(evt);
     displayQuestions();
-})
+});
