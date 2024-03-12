@@ -10,7 +10,7 @@ var heroCount;
 var teamValue;
 
 // Get the modal
-var modal = document.getElementById("myModal");
+var modal = documAlsoent.getElementById("myModal");
 
 // Get the button that opens the modal
 var btn = document.getElementById("myBtn");
