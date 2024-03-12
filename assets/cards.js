@@ -2,45 +2,15 @@ var ts = "1681802982683";
 var publicKey = "3a0831b3a338e3e8018a4bb3175efe3a";
 var hashVal = "02e6893f2e967cff388b27e4a61d3938";
 
-var capContainer = document.querySelector('.card1');
+
 var heroNameEl = document.getElementById('hero-name');
 var heroImageEl = document.getElementById('hero-image');
 var heroDescriptionEl = document.getElementById('hero-description');
-var startButtonEl = document.getElementById('start-button');
-
-var sampleHero = localStorage.getItem("Cap");
-
-function init(){
-/*
-if (sampleHero) {
-    //do stuff with data
-} else {
-    sampleHero = []
-}
-*/
-}
-
-
-function fetchCharacter(character){
-    var { name } = character;
-
-    var apiURL = `https://gateway.marvel.com:443/v1/public/characters?name=${name}&ts=1&apikey=3a0831b3a338e3e8018a4bb3175efe3a&hash=02e6893f2e967cff388b27e4a61d3938`;
-    fetch(apiURL)
-        .then(function (response) {
-            return response.json();
-        })
-        .then(function (data) {
-            for(i=0; i< data.length; i++){
-            console.log(data);       
-                heroNameEl.textContent = data.data.results[0].name;
-                heroImageEl.setAttribute("src",data.data.results[0].thumbnail.path);
-                heroDescriptionEl.textContent = data.data.results[0].description;
-            }  
-        })
-}
-fetchCharacter();
-
-startButtonEl.addEventListener('click', fetchCharacter);
+var currentQuestionIndex = 0;
+var questionsEl = document.getElementById('questions');
+var heroQuestionEl = document.getElementById('hero-question');
+var choicesEl = document.getElementById('choices');
+var score = 0;
 
 var avengerCharacters = [
     {
@@ -273,3 +243,70 @@ var avengerCharacters = [
 
 ];
 
+
+function init(){
+/*
+if (sampleHero) {
+    //do stuff with data
+} else {
+    sampleHero = []
+}
+*/
+}
+
+
+for (i=0; i < avengerCharacters.length; i++){
+        var displayImage = avengerCharacters[i].image;
+        var heroImageEl = document.getElementById('hero-image' + i);
+        heroImageEl.textContent = displayImage;
+        var displayQuestion = avengerCharacters[i].question;
+        var heroQuestionEl = document.getElementById('hero-question' + i);
+        heroQuestionEl.textContent = displayQuestion;
+        //console.log(key + ": " + avenger[key]);
+        fetchCharacter(avengerCharacters[i].name, i);
+        for (j = 0; j < avengerCharacters[i].choices.length; j++) {
+
+            var choiceNode = document.createElement('button');
+            choiceNode.setAttribute('class', 'choice');
+            choiceNode.setAttribute('value', avengerCharacters[i].choices[j]);
+            choiceNode.textContent = avengerCharacters[i].choices[j];
+            document.getElementById('choices' + i).appendChild(choiceNode);
+        }
+}
+
+
+/*
+function questionClick(event){
+    var buttonEl = event.target;
+    if (!buttonEl.matches('.')){
+        return;
+    } else {
+        
+    }
+    // if user guesses wrong input code here
+}
+*/
+
+function fetchCharacter(character, i){
+    var name  = character;
+    var apiURL = `https://gateway.marvel.com:443/v1/public/characters?name=${ name }&ts=1&apikey=3a0831b3a338e3e8018a4bb3175efe3a&hash=02e6893f2e967cff388b27e4a61d3938`;
+    fetch(apiURL)
+        .then(function (response) {
+            return response.json();
+        })
+        .then(function (data) {
+            //console.log(data);
+            //for(i=0; i< data.length; i++){
+            //console.log(data);       
+                document.getElementById('hero-name' + i).textContent = data.data.results[0].name;
+                document.getElementById('hero-image' +i).setAttribute("src",data.data.results[0].thumbnail.path);
+                document.getElementById('hero-description'+ i).textContent=data.data.results[0].description;
+            //}  
+        })
+}
+
+function checkAnswer(){
+    
+}
+
+//startButtonEl.addEventListener('click', fetchCharacter);
