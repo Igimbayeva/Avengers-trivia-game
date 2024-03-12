@@ -244,16 +244,6 @@ var avengerCharacters = [
 ];
 
 
-function init(){
-/*
-if (sampleHero) {
-    //do stuff with data
-} else {
-    sampleHero = []
-}
-*/
-}
-
 function displayQuestions() {
     
     for (i=0; i < avengerCharacters.length; i++){
