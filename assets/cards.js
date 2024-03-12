@@ -272,20 +272,7 @@ for (i=0; i < avengerCharacters.length; i++){
             choiceNode.textContent = avengerCharacters[i].choices[j];
             document.getElementById('choices' + i).appendChild(choiceNode);
         }
-}
-
-
-/*
-function questionClick(event){
-    var buttonEl = event.target;
-    if (!buttonEl.matches('.')){
-        return;
-    } else {
-        
-    }
-    // if user guesses wrong input code here
-}
-*/
+}https://stackoverflow.com/questions/63541883/making-a-matrix-of-inputs-from-user-defined-inputs
 
 function fetchCharacter(character, i){
     var name  = character;
@@ -305,8 +292,11 @@ function fetchCharacter(character, i){
         })
 }
 
-function checkAnswer(){
-    
+function checkAnswer(event){
+    var buttonEl = event.target;
+    if (!buttonEl.matches('.')){
+        return;
+    } else if (displayQuestion = avengerCharacters[i].answer){
+        score + avengerCharacters[i].value;
+    }
 }
-
-//startButtonEl.addEventListener('click', fetchCharacter);
