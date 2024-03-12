@@ -13,7 +13,7 @@ firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
 var player;
 function onYouTubeIframeAPIReady() {
     player = new YT.Player('player', {
-        height: '780',
+        height: '720',
         width: '1280',
         videoId: 'pQKYN-yR2oM',
         playerVars: {
@@ -45,7 +45,8 @@ function onPlayerStateChange(event) {
     }
 }
 
-// Function to stop the video
+// Function to stop the video and redirect to the next page
 function stopVideo() {
     player.stopVideo();
+    window.location.href = 'card-screen.html';
 }
