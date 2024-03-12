@@ -1,0 +1,137 @@
+/* Reset and General Styles */
+body {
+    background-color: rgb(25, 25, 25);
+    margin: 0;
+    padding: 0;
+    color: rgb(247, 250, 253); /* Updated color */
+}
+
+.dark-gray-header {
+    background-color: rgb(25, 25, 25);
+}
+
+.header-center,
+.announcement,
+.footer-center {
+    color: rgb(247, 250, 253); /* Updated color */
+}
+
+/* Main Body of Styles */
+
+.hero {
+    height: 1250px;
+    width: 100%;
+    margin-bottom: 10px;
+    margin-top: 10px;
+    background-image: url("SHIELD-Symbol.jpeg");
+    background-size: cover;
+    background-position: center center;
+}
+
+.header-center {
+    font-size: 2em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgb(25, 25, 25); /* Header background color */
+    padding: 20px;
+}
+
+.content {
+    position: relative;
+}
+
+.announcement {
+    font-size: 1.3em;
+    text-align: center;
+    padding-bottom: 15px;
+    color: rgb(247, 250, 253); /* Updated color */
+}
+
+.background-image {
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center center;
+}
+
+.cta-button {
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 10px 20px;
+    font-size: 1.25em;
+    background-color: rgb(250, 250, 250);
+    color: rgb(23, 23, 23);
+    cursor: pointer;
+}
+
+footer {
+    background-color: rgb(25, 25, 25); /* Footer background color */
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 30px;
+    clear: both;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    text-align: center;
+}
+
+footer h3 {
+    font-size: 20px;
+    color: rgb(247, 250, 253); /* Updated color */
+}
+
+.footer-center {
+    position: absolute;
+    background-color: rgb(25, 25, 25); /* Footer center background color */
+    padding: 20px;
+}
+
+/* Media Queries for Responsive Design */
+@media screen and (max-width: 1400px) {
+    .cta-button {
+        font-size: 0.8em;
+        padding: 1% 2%;
+        top: 30%;
+    }
+}
+
+@media screen and (max-width: 992px) {
+    .header-center {
+        font-size: 1.8em;
+    }
+
+    .cta-button {
+        font-size: 0.9em;
+        padding: 1.5% 3%;
+        top: 30%;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .header-center {
+        font-size: 1.5em;
+    }
+
+    .cta-button {
+        font-size: 0.8em;
+        padding: 1% 2%;
+        top: 30%;
+    }
+
+    .hero {
+        height: 800px;
+    }
+}
+
+@media screen and (max-width: 576px) {
+    .header-center {
+        font-size: 1.2em;
+    }
+
+    .cta-button {
+        font-size: 0.7em;
+        padding: 0.5% 1%;
+    }
+}

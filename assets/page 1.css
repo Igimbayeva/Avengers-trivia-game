@@ -1,18 +1,14 @@
 body {
-    background-color: rgb(24, 25, 25);
+    background-color: rgb(25, 25, 25);
     margin: 0;
     padding: 0;
-}
-.dark-gray-header{
-    background-color: rgb(25, 25, 25)
+    color: rgb(247, 250, 253); /* Body text color */
 }
 
-
-.center-text,
+.header-center,
 .announcement,
-.cta-button,
-.text-center {
-    color: rgb(250, 250, 250);
+.footer-center {
+    color: rgb(247, 250, 253); /* Text color for header, announcement, and footer */
 }
 
 .hero {
@@ -22,13 +18,16 @@ body {
     margin-top: 10px;
     background-image: url("SHIELD-Symbol.jpeg");
     background-size: cover;
-    background-position: center;
+    background-position: center center;
 }
-.center-text {
+
+.header-center {
     font-size: 2em;
     display: flex;
     align-items: center;
     justify-content: center;
+    background-color: rgb(25, 25, 25); /* Header background color */
+    padding: 20px;
 }
 
 .content {
@@ -39,6 +38,7 @@ body {
     font-size: 1.3em;
     text-align: center;
     padding-bottom: 15px;
+    color: rgb(247, 250, 253); 
 }
 
 .background-image {
@@ -50,7 +50,7 @@ body {
 
 .cta-button {
     position: absolute;
-    top: 35%;
+    top: 30%;
     left: 50%;
     transform: translate(-50%, -50%);
     padding: 10px 20px;
@@ -62,45 +62,67 @@ body {
 }
 
 footer {
+    background-color: rgb(25, 25, 25); /* Footer background color */
     left: 50%;
     transform: translateX(-50%);
     padding: 30px;
     clear: both;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     text-align: center;
-}    
-    
+}
 
 footer h3 {
     font-size: 20px;
+    color: rgb(247, 250, 253); /* Updated color */
 }
 
-.text-center {
+.footer-center {
     position: absolute;
+    background-color: rgb(25, 25, 25); /* Footer center background color */
+    padding: 20px;
 }
 
 /* Media Queries for Responsive Design */
+
+@media screen and (max-width: 1400px) {
+    .cta-button {
+        font-size: 1em;
+        padding: 2% 4%;
+        top: 30%; /* Adjust the top position as needed */
+    }
+}
+
 @media screen and (max-width: 992px) {
+    .header-center {
+        font-size: 1.8em;
+    }
+
     .cta-button {
         font-size: 0.9em;
         padding: 1.5% 3%;
+        top: 30%; /* Adjust the top position as needed */
     }
 }
 
 @media screen and (max-width: 768px) {
-    .center-text {
-        font-size: 1.8em;
+    .header-center {
+        font-size: 1.5em;
     }
 
     .cta-button {
         font-size: 0.8em;
         padding: 1% 2%;
+        top: 30%; /* Adjust the top position as needed */
+    }
+
+    .hero {
+        height: 800px; /* Adjust the height accordingly */
     }
 }
 
 @media screen and (max-width: 576px) {
-    .center-text {
-        font-size: 1.5em;
+    .header-center {
+        font-size: 1.2em;
     }
 
     .cta-button {
@@ -108,7 +130,7 @@ footer h3 {
         padding: 0.5% 1%;
     }
 
-    footer h3 {
-        font-size: 1.5vw;
+    .hero {
+        height: 600px; /* Adjust the height accordingly */
     }
 }
