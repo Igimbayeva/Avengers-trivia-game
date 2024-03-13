@@ -1,17 +1,35 @@
-/* Add these styles to your existing CSS */
+/* Common Styles */
+
+body {
+  background-color: rgb(25, 25, 25);
+  margin: 0;
+  padding: 0;
+  color: rgb(247, 250, 253); /* Body text color */
+  font-family: 'Arial', sans-serif;
+}
+
+header {
+  text-align: center;
+  background-color: #232c36;
+  color: #fff;
+  padding: 10px;
+}
+
+/*Cards*/
 
 .choice {
-    background-color: #007bff;
+    background-color: #2f4969;
     color: #fff;
-    border: none;
-    border-radius: 4px;
-    padding: 10px 20px;
+    border: solid 2px;
+    border-radius: 3px;
+    margin: 2px;
+    padding: 3px 3px;
     cursor: pointer;
     transition: background-color 0.3s ease;
 }
 
 .choice:hover {
-    background-color: #0056b3;
+    background-color: #6584a5;
 }
 
 .card-container {
@@ -21,12 +39,8 @@
     padding: 20px;
     justify-content: center; /* Center align cards */
 }
-
-header {
-    text-align: center;
-    background-color: #343a40;
-    color: #fff;
-    padding: 10px;
+p {
+  font-size: 15px;
 }
 
 /* CSS for the modal */
