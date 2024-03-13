@@ -3,164 +3,26 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.min.css"/>
-    <link rel="stylesheet" href="assets/card-screen.css" />
-    <title>Avengers Trivia Game</title>
+    <title>Avenger Trivia Game</title>
+    <link rel="stylesheet" href="./assets/card-screen.css">
 </head>
 <body>
     <header id="start-screen" class="start-game">
         <h1>Director Fury, Assemble Your Team</h1>
     </header>
 
-    <main class="container-fluid">
-        <div class="parent">
-            <article class="card0">
-                <header id="hero-name0">Header</header>
-                <div >
-                    <img id="hero-image0" src="" alt="">
-                </div>
-                <div id="questions">
-                    <div id="hero-question0"></div>
-                    <div id="choices0" class="choices"></div>
-                </div>
-                <footer id="hero-description0">Footer</footer>
-            </article>
-            <article class="card1">
-                <header id="hero-name1">Header</header>
-                <div id="hero-image1">
-                    <img>
-                </div>
-                <div id="questions">
-                    <div id="hero-question1"></div>
-                    <div id="choices1" class="choices"></div>
-                </div>
-                <footer id="hero-description1">Footer</footer>
-            </article>
-            <article class="card2">
-                <header id="hero-name2">Header</header>
-                <div id="hero-image2"></div>
-                <div id="questions">
-                    <div id="hero-question2"></div>
-                    <div id="choices2" class="choices"></div>
-                </div>
-                <footer id="hero-description2">Footer</footer>
-            </article>
-            <article class="card3">
-                <header id="hero-name3">Header</header>
-                <div id="hero-image3"></div>
-                <div id="questions">
-                    <div id="hero-question3"></div>
-                    <div id="choices3" class="choices"></div>
-                </div>
-                <footer id="hero-description3">Footer</footer>
-            </article>
-            <article class="card4">
-                <header id="hero-name4">Header</header>
-                <div id="hero-image4"></div>
-                <div id="questions">
-                    <div id="hero-question4"></div>
-                    <div id="choices4" class="choices"></div>
-                </div>
-                <footer id="hero-description4">Footer</footer>
-            </article>
-            <article class="card5">
-                <header id="hero-name5">Header</header>
-                <div id="hero-image5"></div>
-                <div id="questions">
-                    <div id="hero-question5"></div>
-                    <div id="choices5" class="choices"></div>
-                </div>
-                <footer id="hero-description5">Footer</footer>
-            </article>
-            <article class="card6">
-                <header id="hero-name6">Header</header>
-                <div id="hero-image6"></div>
-                <div id="questions">
-                    <div id="hero-question6"></div>
-                    <div id="choices6" class="choices"></div>
-                </div>
-                <footer id="hero-description6">Footer</footer>
-            </article>
-            <article class="card7">
-                <header id="hero-name7">Header</header>
-                <div id="hero-image7"></div>
-                <div id="questions">
-                    <div id="hero-question7"></div>
-                    <div id="choices7" class="choices"></div>
-                </div>
-                <footer id="hero-description7">Footer</footer>
-            </article>
-            <article class="card8">
-                <header id="hero-name8">Header</header>
-                <div id="hero-image8"></div>
-                <div id="questions">
-                    <div id="hero-question8"></div>
-                    <div id="choices8" class="choices"></div>
-                </div>
-                <footer id="hero-description8">Footer</footer>
-            </article>
-            <article class="card9">
-                <header id="hero-name9">Header</header>
-                <div id="hero-image9"></div>
-                <div id="questions">
-                    <div id="hero-question9"></div>
-                    <div id="choices9" class="choices"></div>
-                </div>
-                <footer id="hero-description9">Footer</footer>
-            </article>
-            <article class="card10">
-                <header id="hero-name10">Header</header>
-                <div id="hero-image10"></div>
-                <div id="questions">
-                    <div id="hero-question10"></div>
-                    <div id="choices10" class="choices"></div>
-                </div>
-                <footer id="hero-description10">Footer</footer>
-            </article>
-            <article class="card11">
-                <header id="hero-name11">Header</header>
-                <div id="hero-image11"></div>
-                <div id="questions">
-                    <div id="hero-question11"></div>
-                    <div id="choices11" class="choices"></div>
-                </div>
-                <footer id="hero-description11">Footer</footer>
-            </article>
-            <article class="card12">
-                <header id="hero-name12">Header</header>
-                <div id="hero-image12"></div>
-                <div id="questions">
-                    <div id="hero-question12"></div>
-                    <div id="choices12" class="choices"></div>
-                </div>
-                <footer id="hero-description12">Footer</footer>
-            </article>
-            <article class="card13">
-                <header id="hero-name13">Header</header>
-                <div id="hero-image13"></div>
-                <div id="questions">
-                    <div id="hero-question13"></div>
-                    <div id="choices13" class="choices"></div>
-                </div>
-                <footer id="hero-description13">Footer</footer>
-            </article>
-            <article class="card14">
-                <header id="hero-name14">Header</header>
-                <div id="hero-image14"></div>
-                <div id="questions">
-                    <div id="hero-question14"></div>
-                    <div id="choices14" class="choices"></div>
-                </div>
-                <footer id="hero-description14">Footer</footer>
-            </article>
-            <div id="feedback"></div>
+    <div class="card-container">
+        <!-- Cards will be dynamically generated here -->
+    </div>
+    
+    <div id="popup-modal" class="modal">
+        <div class="modal-content">
+          <span class="close">&times;</span>
+          <p id="popup-message"></p>
         </div>
-    </main>
+      </div>
+      
 
-    <script src="assets/cards.js"></script>
+    <script src="./assets/cards.js"></script>
 </body>
 </html>
-
-<!--
-    
--->
