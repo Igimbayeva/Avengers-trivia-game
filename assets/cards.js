@@ -1,3 +1,13 @@
+
+// Function to shuffle array elements
+function shuffleArray(array) {
+    for (let i = array.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [array[i], array[j]] = [array[j], array[i]];
+    }
+    return array;
+}
+
 // Define the array of Avenger characters with their questions and answers
 var avengerCharacters = [
     {
@@ -112,6 +122,10 @@ var score = 0;
 
 // Function to initialize the card grid with character information
 function init() {
+    
+    // Shuffle the array of characters
+    avengerCharacters = shuffleArray(avengerCharacters);
+
     avengerCharacters.forEach(character => {
         const card = document.createElement('div');
         card.classList.add('card');
