@@ -46,13 +46,13 @@ https://igimbayeva.github.io/Avengers-trivia-game/
 
 ## Screenshot of the live page
 
-![https](https://github.com/Igimbayeva/Avengers-trivia-game/blob/main/Assets/Live%p1.PNG)
+![Page 1](https://github.com/Igimbayeva/Avengers-trivia-game/blob/main/Assets/Live%p1.PNG)
 <br>
 <br>
-![https](https://github.com/Igimbayeva/Avengers-trivia-game/blob/main/Assets/Live%p2.PNG)
+![Page 2](https://github.com/Igimbayeva/Avengers-trivia-game/blob/main/Assets/Live%p2.PNG)
 <br>
 <br>
-![https](https://github.com/Igimbayeva/Avengers-trivia-game/blob/main/Assets/Live%p3.PNG)
+![Page 3](https://github.com/Igimbayeva/Avengers-trivia-game/blob/main/Assets/Live%p3.PNG)
 
 ## Acknowledgments:
 Special thanks to Marvel Studios for creating the iconic Avengers characters and providing APIs to enhance this trivia game.
