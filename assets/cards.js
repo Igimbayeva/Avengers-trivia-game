@@ -160,31 +160,64 @@ function init() {
     });
 }
 
+
 // Function to check the user's answer
 function checkAnswer(selectedChoice, correctAnswer) {
     if (selectedChoice === correctAnswer) {
         alert("Correct, Mr. Fury");
         score++; // Increment score if the answer is correct
-        // Automatically close the alert after 3 seconds
-        setTimeout(function() {
-            document.querySelector('.alert').style.display = 'none';
-        }, 3000);
     } else {
         alert("Mr. Fury, I expected better");
     }
+
     // Check if all questions have been answered
-    if (score === avengerCharacters.length) {
+    if (currentIndex === avengerCharacters.length - 1) {
         endGame();
+    } else {
+        // Move to the next question
+        currentIndex++;
     }
 }
 
-// Function to end the game
 function endGame() {
-    if (score > 7) {
-        alert("You win, Director Fury.");
+    var popupMessage;
+    if (score > 7) { // If more than 7 questions are answered correctly
+        popupMessage = "You win, Director Fury!";
     } else {
-        alert("You lose. Loki wins.");
+        popupMessage = "You lose, Loki wins. Try again.";
     }
+    var modal = document.getElementById("popup-modal");
+    var message = document.getElementById("popup-message");
+    message.textContent = popupMessage;
+    modal.style.display = "block";
+
+    var closeButton = document.getElementsByClassName("close")[0];
+    closeButton.onclick = function() {
+        modal.style.display = "none";
+    };
+
+    // Add restart game button
+    var restartButton = document.createElement('button');
+    restartButton.textContent = "Restart Game";
+    restartButton.classList.add('restart-button');
+    message.appendChild(restartButton);
+
+    // Add event listener for restart button
+    restartButton.onclick = function() {
+        modal.style.display = "none";
+        restartGame();
+    };
+}
+
+function restartGame() {
+    // Remove existing cards
+    var cardContainer = document.querySelector('.card-container');
+    while (cardContainer.firstChild) {
+        cardContainer.removeChild(cardContainer.firstChild);
+    }
+
+    // Initialize the game again
+    init();
 }
 
 // Event listener to initialize the game when the DOM content is loaded
