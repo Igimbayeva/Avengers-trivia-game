@@ -85,7 +85,7 @@ var avengerCharacters = [
         question: "Which actor played Ant-Man?",
         choices: ["Tom Holland", "The ageless Paul Rudd. Long may he reign...", "Andy Serkis in a mo-cap suit", "Daniel Day-Lewis after living with actual ants"],
         answer: "The ageless Paul Rudd. Long may he reign...", 
-        image: "httpss://i.ibb.co/JyXJPmZ/ant-man.jpg"
+        image: "https://i.ibb.co/JyXJPmZ/ant-man.jpg"
     },
     {
         name: "Spider-Man",
